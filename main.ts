@@ -1,7 +1,7 @@
 function 左回転 () {
     pins.analogWritePin(AnalogPin.P12, 0)
     pins.analogWritePin(AnalogPin.P13, (スピード + バランス) / 2)
-    pins.analogWritePin(AnalogPin.P15, (スピード + バランス) / 2)
+    pins.analogWritePin(AnalogPin.P15, スピード / 2)
     pins.analogWritePin(AnalogPin.P16, 0)
 }
 function 右距離を測る () {
@@ -23,7 +23,7 @@ function バック () {
     pins.analogWritePin(AnalogPin.P12, 0)
     pins.analogWritePin(AnalogPin.P13, スピード + バランス)
     pins.analogWritePin(AnalogPin.P15, 0)
-    pins.analogWritePin(AnalogPin.P16, スピード + バランス)
+    pins.analogWritePin(AnalogPin.P16, スピード)
 }
 function 左距離を測る () {
     左距離 = 0
@@ -40,14 +40,14 @@ function 左距離を測る () {
 function 前進 () {
     pins.analogWritePin(AnalogPin.P12, スピード + バランス)
     pins.analogWritePin(AnalogPin.P13, 0)
-    pins.analogWritePin(AnalogPin.P15, スピード + バランス)
+    pins.analogWritePin(AnalogPin.P15, スピード + 0)
     pins.analogWritePin(AnalogPin.P16, 0)
 }
 function 右回転 () {
     pins.analogWritePin(AnalogPin.P12, (スピード + バランス) / 2)
     pins.analogWritePin(AnalogPin.P13, 0)
     pins.analogWritePin(AnalogPin.P15, 0)
-    pins.analogWritePin(AnalogPin.P16, (スピード + バランス) / 2)
+    pins.analogWritePin(AnalogPin.P16, スピード / 2)
 }
 input.onButtonPressed(Button.B, function () {
     電源 = 0
